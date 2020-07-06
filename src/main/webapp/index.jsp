@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>小叮当家二手校园交易网</title>
+<title>首页</title>
 </head>
 <body>
 <a href="<%=request.getContextPath()%>/query">用户信息查询</a>
