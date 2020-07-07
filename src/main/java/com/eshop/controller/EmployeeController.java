@@ -13,7 +13,6 @@ import com.eshop.service.EmployeeService;
 	@Controller
 	@RequestMapping("/")
 	public class EmployeeController {
-		
 	    @Autowired
 	    private EmployeeService empService;
 	    
