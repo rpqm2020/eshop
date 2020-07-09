@@ -1,15 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<%--  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> --%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>系统首页</title>
-<c:set value="${pageContext.request.contextPath}" var="path" scope="page"/>
-<link rel="stylesheet" href="${path}/css/login.css">
-<link rel="stylesheet" href="${path}/font-awesome-4.7.0/css/font-awesome.css">
-<style type="text/css">
+<%-- <c:set value="${pageContext.request.contextPath}" var="path" scope="page"/> --%>
+<link rel="stylesheet" href="<%=basePath %>/css/login.css"> 
+<link rel="stylesheet" href="<%=basePath %>/font-awesome-4.7.0/css/font-awesome.css">
+<%--  <style type="text/css">
 #login-box{
     width: 30%;
     height: auto;
@@ -58,11 +62,11 @@
 }
 
 body {
-    background:url(beijin1.jpg);
+    background:url(<%=basePath %>/image/beijin1.jpg);
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
-</style>
+</style>  --%>
 </head>
 <body>
 <%-- <a href="<%=request.getContextPath()%>/query">用户信息查询</a> --%>
@@ -76,12 +80,12 @@ body {
         <h1>小叮当家二手交易平台</h1>
         <div class="form">
             <div class="item">
-                <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
-                                                       用户名:<input type="text" placeholder="请输入用户名" name="uname">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" placeholder="请输入用户名" name="uname">
             </div>
             <div class="item">
-               <!--  <i class="fa fa-key" aria-hidden="true"></i> -->
-                                                      密&nbsp&nbsp码:<input type="password" placeholder="请输入密码" name="upassword">
+                  <i class="fa fa-key" aria-hidden="true"></i>
+                  <input type="password" placeholder="请输入密码" name="upassword">
             </div>
         </div>
         <button type="submit">登录</button>
