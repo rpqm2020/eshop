@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.eshop.service.UserService;
 @Controller
-//@ResponseBody ½«×Ö·û´®·µ»ØÒ³Ãæ
 @RequestMapping("/")
 public class UserController {
 //@Resource
@@ -27,13 +26,13 @@ public String getParamByReq(HttpServletRequest request, HttpServletResponse resp
 	 int u=userservice.userLogin(username,password);
 	//int u=0;
 	    if(u==0) {
-	    	System.out.println("µÇÂ¼Ê§°Ü£¬·µ»ØÊ×Ò³");
+	    	System.out.println("ç™»å½•å¤±è´¥ï¼Œè¿”å›é¦–é¡µ");
 	    //	return "index";
 	    	return "redirect:"; 	
 	    }else{
-	    System.out.println("µÇÂ¼³É¹¦");
+	    System.out.println("ç™»å½•æˆåŠŸ");
 	    //return "query";
-	    return "redirect:query"; 	
+			return "../../xadmin/index"; /* X-admin-v2.2/X-admin/index.jsp */
 	    //return RedirectToAction("about","Home"); ;
 	    }
 }	

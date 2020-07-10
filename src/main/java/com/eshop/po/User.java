@@ -7,6 +7,13 @@ private String loginpass;
 private String realname;
 private Integer age;
 private String sex;
+private String email;
+public String getEmail() {
+	return email;
+}
+public void setEmail(String email) {
+	this.email = email;
+}
 public Integer getUid() {
 	return uid;
 }
@@ -46,7 +53,7 @@ public void setSex(String sex) {
 @Override
 public String toString() {
 	return "User [uid=" + uid + ", loginname=" + loginname + ", loginpass=" + loginpass + ", realname=" + realname
-			+ ", age=" + age + ", sex=" + sex + "]";
+			+ ", age=" + age + ", sex=" + sex + ", email=" + email + "]";
 }
 
 }

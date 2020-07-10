@@ -5,7 +5,7 @@
     version="3.0">
   <display-name>eshop</display-name>
     <welcome-file-list>
-      <welcome-file>index.jsp</welcome-file>
+      <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
     <!-- 对客户端请求的静态资源如图片、JS文件等的请求交由默认的servlet进行处理 -->
    <servlet-mapping>
