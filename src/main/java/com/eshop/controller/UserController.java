@@ -32,7 +32,7 @@ public String getParamByReq(HttpServletRequest request, HttpServletResponse resp
 	    //	return "index";
 	    	return "redirect:"; 	
 	    }else{
-	    System.out.println("登录成功");
+	    System.out.println("登录成功!");
 	    //return "query";
 			return "../../xadmin/index"; /* X-admin-v2.2/X-admin/index.jsp */
 	    //return RedirectToAction("about","Home"); ;

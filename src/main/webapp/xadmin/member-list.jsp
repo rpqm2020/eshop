@@ -9,7 +9,7 @@
 <html class="x-admin-sm">
     <head>
         <meta charset="UTF-8">
-        <title>欢迎页面-X-admin2.2</title>
+        <title>用户查询</title>
         <meta name="renderer" content="webkit">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
@@ -23,7 +23,7 @@
         <![endif]-->
     </head>
     <body>
-        <div class="x-nav">
+        <%-- <div class="x-nav">
           <span class="layui-breadcrumb">
             <a href="">首页</a>
             <a href="">演示</a>
@@ -32,7 +32,7 @@
           </span>
           <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" onclick="location.reload()" title="刷新">
             <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i></a>
-        </div>
+        </div> --%>
         <div class="layui-fluid">
             <div class="layui-row layui-col-space15">
                 <div class="layui-col-md12">
@@ -74,91 +74,8 @@
                                     <th>操作</th></tr>
                                 </thead>
                                 <tbody>
-                               <%--  <%
-  //循环显示数据
-   List<Employee> emplist=(List)request.getAttribute("emp"); 
-   if(emplist.size()!=0){
-     for(int i=0;i<emplist.size();i++){
-    	 Employee em =new Employee(); 
-         em = emplist.get(i);
-  %>
-  
-<tr>
-     <td><%=emplist.get(i).getEid() %></td>
-     <td><%=emplist.get(i).getEname() %></td>
-     <td><%=emplist.get(i).getAge()%></td>
-     <td><%=emplist.get(i).getEid() %></td>
-     <td><%=emplist.get(i).getEname() %></td>
-     <td><%=emplist.get(i).getAge()%></td>
-     <td><%=emplist.get(i).getAge()%></td>
-  </tr>
-  <%
-     }
-   }
-%> --%>
-<c:forEach items="${us}" var="c" varStatus="stc">
-                        <tr>
-                                <td><input value="" check='box' type="checkbox" /></td>
-                                <td>${c.nickname}</td>
-                                <td>${c.email}</td>
-                                <td>${c.status}</td>
-                                <td>${c.create_time}</td>
-                                <td>${c.last_login_time}</td>
-                                <td>
-                                    <c:if test="${c.status=='1'}">
-                                        <button type="button" class="btn btn-warning Disable" >禁用</button>
-                                    </c:if>
-                                    <c:if test="${c.status=='0'}">
-                                        <button type="button" class="btn btn-success activation" >激活</button>
-                                    </c:if>
 
-                                    <button type="button" class="btn btn-danger delete" >删除</button>
-                                </td>
-                        </tr>
-                            </c:forEach>
- <%-- <%
-  //循环显示数据
-     EmployeeService empService=new EmployeeService();
-   //List<Employee> emplist=(List)request.getAttribute("emp"); 
-  ArrayList<Employee> emplist=empService.getList();
-   //List<Employee> emplist=(List)request.getAttribute("emp"); 
-   if(emplist.size()!=0){
-     for(int i=0;i<emplist.size();i++){
-    	 Employee em =new Employee(); 
-         em = emplist.get(i);
-  %>
-  <tr>
-                                    <td>
-                                      <input type="checkbox" name="id" value="1"   lay-skin="primary"> 
-                                    </td>
-                                    <td><%=emplist.get(i).getEid() %></td>
-                                    <td><%=emplist.get(i).getEname() %></td>
-                                    <td>男</td>
-                                    <td><%=emplist.get(i).getAge()%></td>
-                                    <td>北京市 海淀区</td>
-                                    <td class="td-status">
-                                      <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
-                                    <td class="td-manage">
-                                      <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
-                                        <i class="layui-icon">&#xe601;</i>
-                                      </a>
-                                      <a title="编辑"  onclick="xadmin.open('编辑','member-edit.html',600,400)" href="javascript:;">
-                                        <i class="layui-icon">&#xe642;</i>
-                                      </a>
-                                      <a onclick="xadmin.open('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;">
-                                        <i class="layui-icon">&#xe631;</i>
-                                      </a>
-                                      <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
-                                        <i class="layui-icon">&#xe640;</i>
-                                      </a>
-                                    </td>
-                                  </tr>
-
-  <%
-     }
-   }
-%>  --%>
-                                  <!-- <tr>
+                                  <tr>
                                     <td>
                                       <input type="checkbox" name="id" value="1"   lay-skin="primary"> 
                                     </td>
@@ -184,7 +101,7 @@
                                       </a>
                                     </td>
                                   </tr>
-                                  <tr>
+                                  <!--<tr>
                                     <td>
                                       <input type="checkbox" name="id"  value="2" lay-skin="primary">
                                     </td>
@@ -323,8 +240,8 @@
                                   <a class="prev" href="">&lt;&lt;</a>
                                   <a class="num" href="">1</a>
                                   <span class="current">2</span>
-                                  <a class="num" href="">3</a>
-                                  <a class="num" href="">489</a>
+                                  <a class="num" href="">。。。</a>
+                                  <a class="num" href="">9</a>
                                   <a class="next" href="">&gt;&gt;</a>
                                 </div>
                             </div>

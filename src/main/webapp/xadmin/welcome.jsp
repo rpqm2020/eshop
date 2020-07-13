@@ -2,7 +2,7 @@
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" import="java.util.*" contentType="text/html;charset=UTF-8"%> 
 <%String username = request.getSession().getAttribute("username").toString();%>
-<%String datetime=new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime()); //获取系统时间%>
+<%String datetime=new SimpleDateFormat("yyyy-MM-dd hh-mm-ss").format(Calendar.getInstance().getTime()); //获取系统时间%>
 <html class="x-admin-sm">
     <head>
         <meta charset="UTF-8">

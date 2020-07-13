@@ -1,6 +1,6 @@
 <!-- <!doctype html> -->
 <%@ page language="java" import="java.util.*" contentType="text/html;charset=UTF-8"%> 
-    <%
+<%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
@@ -32,7 +32,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <!-- 顶部开始 -->
         <div class="container">
             <div class="logo">
-                <a href="./index.jsp">小叮当家</a></div>
+                <!-- <a href="./index.jsp">小叮当家</a></div> -->
+                <a>小叮当家</a></div>
             <div class="left_open">
                 <a><i title="展开左侧栏" class="iconfont">&#xe699;</i></a>
             </div>
