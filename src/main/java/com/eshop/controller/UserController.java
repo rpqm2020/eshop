@@ -21,6 +21,8 @@ private UserService userservice;
 public String getParamByReq(HttpServletRequest request, HttpServletResponse response) {
 	String username = request.getParameter("uname");
 	String password = request.getParameter("upassword");
+
+    request.getSession().setAttribute("username",username);//将用户名保存在整个会话期间
 	System.out.println(username);
 	System.out.println(password);
 	 int u=userservice.userLogin(username,password);

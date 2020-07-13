@@ -1,5 +1,10 @@
 <!-- <!doctype html> -->
 <%@ page language="java" import="java.util.*" contentType="text/html;charset=UTF-8"%> 
+    <%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<%String username = request.getSession().getAttribute("username").toString();%>
 <html class="x-admin-sm">
     <head>
         <meta charset="UTF-8">
@@ -8,11 +13,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
         <meta http-equiv="Cache-Control" content="no-siteapp" />
-        <link rel="stylesheet" href="./css/font.css">
-        <link rel="stylesheet" href="./css/xadmin.css">
-        <!-- <link rel="stylesheet" href="./css/theme5.css"> -->
-        <script src="./lib/layui/layui.js" charset="utf-8"></script>
-        <script type="text/javascript" src="./js/xadmin.js"></script>
+        <link rel="stylesheet" href="<%=basePath %>/xadmin/css/font.css">
+        <link rel="stylesheet" href="<%=basePath %>/xadmin/css/xadmin.css">
+        <link rel="stylesheet" href="<%=basePath %>/xadmin/css/theme4003.min.css">
+        <script src="<%=basePath %>/xadmin/lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="<%=basePath %>/xadmin/js/xadmin.js"></script>
         <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
         <!--[if lt IE 9]>
           <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -46,17 +51,17 @@
                             <a onclick="xadmin.open('弹出指定宽高','http://www.baidu.com',500,300)">
                                 <i class="iconfont">&#xe6a8;</i>弹出指定宽高</a></dd>
                         <dd>
-                            <a onclick="xadmin.add_tab('在tab打开','member-list.html')">
+                            <a onclick="xadmin.add_tab('在tab打开','xadmin/member-list.html')">
                                 <i class="iconfont">&#xe6b8;</i>在tab打开</a></dd>
                         <dd>
-                            <a onclick="xadmin.add_tab('在tab打开刷新','member-del.html',true)">
+                            <a onclick="xadmin.add_tab('在tab打开刷新','xadmin/member-del.html',true)">
                                 <i class="iconfont">&#xe6b8;</i>在tab打开刷新</a></dd>
                     </dl>
                 </li>
             </ul>
             <ul class="layui-nav right" lay-filter="">
                 <li class="layui-nav-item">
-                    <a href="javascript:;">张强</a>
+                    <a href="javascript:;">您好，<%=username %></a>
                     <dl class="layui-nav-child">
                         <!-- 二级菜单 -->
                         <dd>
@@ -84,22 +89,22 @@
                             <i class="iconfont nav_right">&#xe697;</i></a>
                         <ul class="sub-menu">
                             <li>
-                                <a onclick="xadmin.add_tab('管理员列表','admin-list.jsp')">
+                                <a onclick="xadmin.add_tab('管理员列表','xadmin/admin-list.jsp')">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>管理员列表</cite></a>
                             </li>
                             <li>
-                                <a onclick="xadmin.add_tab('角色管理','admin-role.html')">
+                                <a onclick="xadmin.add_tab('角色管理','xadmin/admin-role.html')">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>角色管理</cite></a>
                             </li>
                             <li>
-                                <a onclick="xadmin.add_tab('权限分类','admin-cate.html')">
+                                <a onclick="xadmin.add_tab('权限分类','xadmin/admin-cate.html')">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>权限分类</cite></a>
                             </li>
                             <li>
-                                <a onclick="xadmin.add_tab('权限管理','admin-rule.html')">
+                                <a onclick="xadmin.add_tab('权限管理','xadmin/admin-rule.html')">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>权限管理</cite></a>
                             </li>
@@ -118,44 +123,44 @@
                                     <i class="iconfont nav_right">&#xe697;</i></a>
                                 <ul class="sub-menu">
                                     <li>
-                                        <a onclick="xadmin.add_tab('添加用户','member-add.jsp')">
+                                        <a onclick="xadmin.add_tab('添加用户','xadmin/member-add.jsp')">
                                             <i class="iconfont">&#xe6a7;</i>
                                             <cite>添加用户</cite></a>
                                     </li>
                                     <li>
-                                        <a onclick="xadmin.add_tab('删除用户','member-del.html')">
+                                        <a onclick="xadmin.add_tab('删除用户','xadmin/member-del.html')">
                                             <i class="iconfont">&#xe6a7;</i>
                                             <cite>用户删除</cite></a>
                                     </li>
                                     <li>
-                                        <a onclick="xadmin.add_tab('等级管理','member-list1.html')">
+                                        <a onclick="xadmin.add_tab('等级管理','xadmin/member-list1.html')">
                                             <i class="iconfont">&#xe6a7;</i>
                                             <cite>等级管理</cite></a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a onclick="xadmin.add_tab('统计页面','welcome1.html')">
+                                <a onclick="xadmin.add_tab('统计页面','xadmin/welcome1.html')">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>统计页面</cite></a>
                             </li>
                             <li>
-                                <a onclick="xadmin.add_tab('用户查询列表','member-list.jsp')">
+                                <a onclick="xadmin.add_tab('用户查询列表','xadmin/member-list.jsp')">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>用户查询列表</cite></a>
                             </li>
                             <li>
-                                <a onclick="xadmin.add_tab('用户列表(动态表格)','member-list1.html',true)">
+                                <a onclick="xadmin.add_tab('用户列表(动态表格)','xadmin/member-list1.html',true)">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>用户列表(动态表格)</cite></a>
                             </li>
                             <li>
-                                <a onclick="xadmin.add_tab('添加用户','member-add.jsp')">
+                                <a onclick="xadmin.add_tab('添加用户','xadmin/member-add.jsp')">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>添加用户</cite></a>
                             </li>
                             <li>
-                                <a onclick="xadmin.add_tab('删除用户','member-del.html')">
+                                <a onclick="xadmin.add_tab('删除用户','xadmin/member-del.html')">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>删除用户</cite></a>
                             </li>
@@ -356,7 +361,7 @@
                 </div>
                 <div class="layui-tab-content">
                     <div class="layui-tab-item layui-show">
-                        <iframe src='./welcome.jsp' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                        <iframe src='./xadmin/welcome.jsp' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
                     </div>
                 </div>
                 <div id="tab_show"></div>

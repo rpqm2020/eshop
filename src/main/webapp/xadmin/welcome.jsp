@@ -1,5 +1,8 @@
 <!-- <!doctype html> -->
+<%@ page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" import="java.util.*" contentType="text/html;charset=UTF-8"%> 
+<%String username = request.getSession().getAttribute("username").toString();%>
+<%String datetime=new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime()); //获取系统时间%>
 <html class="x-admin-sm">
     <head>
         <meta charset="UTF-8">
@@ -24,7 +27,7 @@
                     <div class="layui-card">
                         <div class="layui-card-body ">
                             <blockquote class="layui-elem-quote">欢迎管理员：
-                                <span class="x-red">test</span>！当前时间:2020-07-10 
+                                <span class="x-red"><%=username %></span>！当前时间:<%=datetime %>
                             </blockquote>
                         </div>
                     </div>
