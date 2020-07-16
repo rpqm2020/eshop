@@ -7,4 +7,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        <!--  select count(*) from user where loginname=111111 and loginpass=000000 -->
         select count(*) from user where loginname=#{loginname} and loginpass=#{loginpass}
     </select>
+<!--     用户 添加 -->
+     <select id="addUser" parameterType="user" resultType="User">
+        INSERT ignore INTO user(loginname,loginpass,realname,age,sex)
+         values (#{loginname},#{loginpass},#{realname},#{age},#{sex});
+    </select>
+<!-- 查询是否存在用户 -->
+    <select id="getUserByName" parameterType="java.lang.String" resultType="int">
+       select count(*) from user where loginname=#{loginname}
+    </select>
 </mapper>
